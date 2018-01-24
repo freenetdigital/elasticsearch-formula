@@ -1,7 +1,7 @@
 {% from "elasticsearch/settings.sls" import elasticsearch with context %}
 
 {%- if elasticsearch.custom_repo_url != '' %}
-  {%- set repo_url = elasticsearch.custom_repo_url ~ (elasticsearch.major_version|string) ~ '.x' %}
+  {%- set repo_url = elasticsearch.custom_repo_url %}
 {%- else %}
   {%- if elasticsearch.major_version >= 5 %}
     {%- set repo_url = 'https://artifacts.elastic.co/packages/' ~ (elasticsearch.major_version|string) ~ '.x' %}
