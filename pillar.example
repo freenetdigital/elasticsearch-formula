@@ -1,6 +1,8 @@
 elasticsearch:
   version: 2.4.2-1
   use_repo: True
+  custom_repo_url: http://my-mirror.example.com/
+  custom_repo_gpgkey: http://custom-url.example.com/GPG-KEY-elasticsearch
   config:
     cluster.name: my-application
     node.name: node2

@@ -28,4 +28,6 @@
 {% do elasticsearch.update( { 
                               'version': version,
                               'major_version': major_version,
+                              'custom_repo_url': elasticsearch_map.custom_repo_url,
+                              'custom_repo_gpgkey': elasticsearch_map.custom_repo_gpgkey,
                             } ) %}

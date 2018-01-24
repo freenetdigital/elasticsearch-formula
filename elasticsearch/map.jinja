@@ -2,6 +2,8 @@
     'default': {
         'pkg': 'elasticsearch',
         'use_repo': True,
+        'custom_repo_url': '',
+        'custom_repo_gpgkey': '',
     },
 },
 merge=salt['pillar.get']('elasticsearch', {}),
