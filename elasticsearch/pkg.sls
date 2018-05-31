@@ -16,3 +16,4 @@ elasticsearch_pkg:
     - require:
       - sls: elasticsearch.repo
     {% endif %}
+    - hold: True
