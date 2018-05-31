@@ -12,7 +12,7 @@ include:
     - source: salt://elasticsearch/files/sysconfig
     - user: elasticsearch
     - group: elasticsearch
-    - mode: 0600
+    - mode: 0640
     - template: jinja
     - watch_in:
       - service: elasticsearch_service
