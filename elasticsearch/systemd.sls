@@ -2,6 +2,7 @@
 
 {% from "elasticsearch/map.jinja" import elasticsearch_map with context %}
 
+{%- if elasticsearch_map.config['bootstrap.memory_lock'] is defined or elasticsearch_map.config['bootstrap.mlockall'] is defined %}
 {%- if elasticsearch_map.config['bootstrap.memory_lock'] or elasticsearch_map.config['bootstrap.mlockall'] %}
 /etc/systemd/system/elasticsearch.service.d/elasticsearch.conf:
   file.managed:
@@ -21,5 +22,6 @@ memlock_systemd_configuration:
     - name: service.systemctl_reload
     - onchanges:
       - file: /etc/systemd/system/elasticsearch.service.d/elasticsearch.conf
+{%- endif %}
 {%- endif %}
 {%- endif %}
