@@ -15,4 +15,4 @@ elasticsearch_service:
   {%- endif %}
 {%- endif %}
     - require:
-      - pkg: elasticsearch
+      - pkg: elasticsearch_pkg
